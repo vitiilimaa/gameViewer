@@ -1,0 +1,31 @@
+.form-control {
+  font-family: "Inter";
+  width: 100%;
+  border: 1px solid #000;
+  border-radius: 0;
+}
+
+.form-control:focus,
+.form-control.is-invalid:focus {
+  border-color: #92979f;
+  box-shadow: none;
+}
+
+.form-floating > .form-control:not(:placeholder-shown) ~ label::after {
+  background-color: transparent;
+}
+
+.form-floating > .form-control:not(:placeholder-shown) ~ label,
+.form-floating > .form-control:focus ~ label {
+  transform: scale(0.8) translateY(-0.5rem) translateX(0.15rem);
+}
+
+#icon-password {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  width: 21.5px;
+  height: 21.5px;
+  cursor: pointer;
+}

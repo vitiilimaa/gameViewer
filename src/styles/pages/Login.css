@@ -1,0 +1,21 @@
+.login-container {
+  display: flex;
+  justify-content: center !important;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)),
+    url("https://external-preview.redd.it/MymKZEXG2Q5-3jO8lTzFC6rvgk8R1U0vGhKCcnZ8Pek.jpg?auto=webp&s=d898eeded220691e5f0b870055e0b1030697de9d");
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: context-menu;
+}
+
+.form-login-container {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.75);
+  height: 60%;
+  width: 40vh;
+  padding: 4rem 3rem;
+  margin-top: 5rem;
+}

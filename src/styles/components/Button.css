@@ -1,0 +1,37 @@
+.btn {
+  border: 0 solid transparent;
+  border-radius: 30px;
+  background-image: linear-gradient(
+    rgb(255, 0, 0),
+    rgb(255, 0, 0),
+    rgb(131, 9, 9)
+  );
+  padding: 12px 35px;
+  font-size: 20px;
+  font-weight: 600;
+  transition: .2s;
+}
+
+.btn:hover {
+  filter: brightness(0.85);
+}
+
+.btn-text {
+  background-image: linear-gradient(
+    to bottom,
+    rgb(255, 255, 255),
+    rgb(255, 255, 255),
+    rgb(136, 136, 136)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+.loading {
+    width: 1.3rem !important;
+  height: 1.3rem !important;
+  font-size: 12px;
+}

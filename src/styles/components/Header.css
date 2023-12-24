@@ -1,0 +1,41 @@
+.navbar {
+  position: absolute;
+}
+
+.container-fluid {
+  width: 100vw;
+}
+
+.navbar-brand, .navbar-nav {
+  background-image: linear-gradient(
+    rgb(255, 255, 255),
+    rgb(255, 255, 255),
+    rgb(188, 188, 188)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+
+.navbar-brand > span {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 600;
+}
+
+.navbar-toggler {
+  border: 0 solid transparent;
+  box-shadow: none !important;
+}
+
+.navbar-nav {
+  justify-content: center !important;
+  align-items: center !important;
+  font-family: "Inter", sans-serif;
+}
+
+@media (min-width: 576px) {
+  .navbar-brand {
+    font-size: 2rem;
+  }
+}

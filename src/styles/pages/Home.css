@@ -1,11 +1,14 @@
 .home-container {
   display: flex;
-  align-items: center !important;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)),
     url("https://images3.alphacoders.com/106/1065466.png");
   background-size: cover;
   background-repeat: no-repeat;
   cursor: context-menu;
+}
+
+.container-text {
+  margin-top: 10rem;
 }

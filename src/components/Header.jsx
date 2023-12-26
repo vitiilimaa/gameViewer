@@ -5,10 +5,10 @@ import {
   faBars,
   faDoorOpen,
 } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../contexts/UserContext";
 import { toast } from "react-toastify";
+import CustomLink from "./CustomLink";
 
 const Header = () => {
   const { loggedUser, setLoggedUser } = useContext(UserContext);
@@ -23,13 +23,17 @@ const Header = () => {
     <header>
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid px-0 px-sm-5">
-          <Link
-            className="navbar-brand ms-3 d-flex align-items-center column-gap-3"
-            to="/"
-          >
-            <FontAwesomeIcon color="#fff" icon={faGamepad} />
-            <span className="text-light">GAME VIEWER</span>
-          </Link>
+          <CustomLink
+            title={
+              <>
+                <FontAwesomeIcon color="#fff" icon={faGamepad} />
+                <span className="text-light">GAME VIEWER</span>
+              </>
+            }
+            addClass="navbar-brand ms-3 d-flex align-items-center column-gap-3"
+            route="/"
+            onClick={() => setLoadingScreen(true)}
+          />
           <button
             className="navbar-toggler me-2"
             type="button"
@@ -47,28 +51,29 @@ const Header = () => {
           >
             <ul className="navbar-nav column-gap-4">
               <li className="nav-item">
-                <Link
-                  className="nav-link active text-light"
-                  aria-current="page"
-                  to="/"
-                >
-                  INÍCIO
-                </Link>
+                <CustomLink
+                  title="INÍCIO"
+                  addClass="nav-link active text-light"
+                  route="/"
+                  onClick={() => setLoadingScreen(true)}
+                />
               </li>
               <li className="nav-item">
-                <Link
+                <CustomLink
+                  title="CATEGORIAS"
                   className="nav-link active text-light"
-                  aria-current="page"
-                  to="/categorias"
-                >
-                  CATEGORIAS
-                </Link>
+                  route="/categorias"
+                  onClick={() => setLoadingScreen(true)}
+                />
               </li>
               <li className="nav-item">
                 {!loggedUser?.name ? (
-                  <Link className="nav-link text-light" to="/login">
-                    LOGIN
-                  </Link>
+                  <CustomLink
+                    title="LOGIN"
+                    addClass="nav-link text-light"
+                    route="/login"
+                    onClick={() => setLoadingScreen(true)}
+                  />
                 ) : (
                   <div className="dropdown">
                     <a
@@ -85,17 +90,24 @@ const Header = () => {
                     </a>
                     <ul className="dropdown-menu dropdown-menu-dark">
                       <li className="normal-text">
-                        <Link
-                          className="dropdown-item"
-                          style={{
+                        <CustomLink
+                          title={
+                            <>
+                              {" "}
+                              <FontAwesomeIcon
+                                className="me-3"
+                                icon={faDoorOpen}
+                              />
+                              Sair
+                            </>
+                          }
+                          addClass="dropdown-item"
+                          containerStyle={{
                             fontSize: 16,
                           }}
-                          to="/"
+                          route="/"
                           onClick={() => handleClickButton()}
-                        >
-                          <FontAwesomeIcon className="me-3" icon={faDoorOpen} />
-                          Sair
-                        </Link>
+                        />
                       </li>
                     </ul>
                   </div>

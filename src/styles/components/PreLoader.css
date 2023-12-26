@@ -1,0 +1,26 @@
+.preloader-container {
+  display: flex;
+  position: absolute;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  min-width: 100vw;
+  min-height: 100vh;
+  cursor: context-menu;
+  z-index: 3;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  visibility: visible;
+}
+
+.preloader-container.hide {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out 0.5s, visibility 0.5s 0.5s;
+}
+
+.preloader-spinner {
+  height: 8rem;
+  width: 8rem;
+  color: #db1d1d;
+}

@@ -2,16 +2,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 100vw;
+  min-width: 100%;
   min-height: 100vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)),
     url("https://i.redd.it/d5g2jaawgw431.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   cursor: context-menu;
+  overflow-x: hidden;
 }
 
 .container-categories-text {
   width: 100%;
   margin-top: 10rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
 }

@@ -1,13 +1,16 @@
 import "../styles/pages/Home.css";
 import { Button } from "../components";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { LoadingContext } from "../contexts/LoadingContext";
 
 const Home = () => {
+  const { setLoadingScreen } = useContext(LoadingContext)
   const navigate = useNavigate();
 
   return (
-    <div className="home-container justify-content-center">
-      <div className="container-text px-3 text-center">
+    <div className="home-container pb-5">
+      <div className="container-text px-5 text-center">
         <p>BEM-VINDO AO NOSSO MUNDO</p>
         <span className="normal-text fw-bold">VISUALIZE OS </span>
         <span className="featured-text fw-bold">MELHORES JOGOS </span>
@@ -16,7 +19,10 @@ const Home = () => {
         <Button
           title="VEJA AQUI"
           fontSize={20}
-          onClick={() => navigate("/categorias")}
+          onClick={() => {
+            navigate("/categorias")
+            setLoadingScreen(true)
+          }}
           addClassContainer="mt-5"
           addClassButton="px-5"
         />

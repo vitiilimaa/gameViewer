@@ -65,9 +65,9 @@ const Login = () => {
   };
 
   return (
-    <div className="login-container flex-column justify-content-center px-4">
+    <div className="login-container flex-column justify-content-center px-4 py-5">
       {!loggedUser?.name ? (
-        <form className="form-login-container">
+        <form className="form-login-container d-flex flex-column justify-content-center">
           <div className="d-flex justify-content-center align-items-center flex-wrap">
             <p className="fw-bold w-100 text-center fs-4">BEM-VINDO(A) </p>
             <FontAwesomeIcon fontSize={56} icon={faGamepad} />

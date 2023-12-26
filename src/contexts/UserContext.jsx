@@ -11,7 +11,7 @@ const UserContextProvider = ({ children }) => {
 
   const sharedData = {
     loggedUser,
-    setLoggedUser,
+    setLoggedUser
   };
 
   return (

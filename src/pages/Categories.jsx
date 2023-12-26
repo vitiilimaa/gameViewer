@@ -121,7 +121,7 @@ const Categories = () => {
 
       if (modalTitle === "ADICIONAR CATEGORIA") {
         addCategory(obj);
-        setSelectedButton(obj.name)
+        setSelectedButton(obj.name);
       } else if (modalTitle === `EDITAR ${selectedButton?.toUpperCase()}`) {
         editCategory(obj);
         setSelectedButton(obj.name);
@@ -176,10 +176,10 @@ const Categories = () => {
           </>
         }
       />
-      <div className="container-categories-text px-3 text-center">
+      <div className="container-categories-text text-center">
         <span style={{ fontSize: 36 }} className="normal-text fw-bold">
           ABAIXO ESTÃO LISTADOS{" "}
-        </span>{" "}
+        </span>
         <span style={{ fontSize: 36 }} className="featured-text fw-bold">
           OS MELHORES JOGOS{" "}
         </span>{" "}

@@ -202,7 +202,7 @@ const Categories = () => {
             buttonHoverStyle={{ transition: 0.2 }}
           />
         ))}
-        {loggedUser && (
+        {loggedUser?.name && (
           <Dropdown>
             <Dropdown.Toggle style={selectedButtonStyle}>
               <span className="btn-text">CATEGORIA</span>
@@ -240,7 +240,6 @@ const Categories = () => {
         )}
         addClassContainer="w-100 px-3 my-5"
         currentCategory={selectedButton}
-        loggedUser={loggedUser}
       />
     </div>
   );

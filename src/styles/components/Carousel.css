@@ -25,7 +25,7 @@
 .slide {
   width: 25%;
   position: relative;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .slide img {
@@ -76,25 +76,9 @@
   margin-right: 40px;
 }
 
-#radio1:checked ~ .first {
-  margin-left: 0;
-}
-
-#radio2:checked ~ .first {
-  margin-left: -25%;
-}
-
-#radio3:checked ~ .first {
-  margin-left: -50%;
-}
-
-#radio4:checked ~ .first {
-  margin-left: -75%;
-}
-
-#radio1:checked ~ .navigation-auto .auto-btn1,
+/* #radio1:checked ~ .navigation-auto .auto-btn1,
 #radio2:checked ~ .navigation-auto .auto-btn2,
 #radio3:checked ~ .navigation-auto .auto-btn3,
 #radio4:checked ~ .navigation-auto .auto-btn4 {
   background-color: #fff;
-}
+} */

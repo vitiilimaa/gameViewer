@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import "../styles/components/Carousel.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -10,14 +10,15 @@ import { Dropdown } from "react-bootstrap";
 import { TextInput, CustomModal, Button } from "./";
 import { addImage, editImage, deleteImage } from "../services/imageApiServices";
 import validateFields from "../helpers/validateFields";
+import { UserContext } from "../contexts/UserContext";
 
 const Carousel = ({
   images,
   addClassCarousel = "",
   addClassContainer = "",
   currentCategory,
-  loggedUser,
 }) => {
+  const { loggedUser } = useContext(UserContext);
   const [counter, setCounter] = useState(1);
   const [prevCategory, setPrevCategory] = useState(currentCategory);
   const [showModal, setShowModal] = useState(false);
@@ -62,6 +63,26 @@ const Carousel = ({
       setCounter(1);
     }
 
+    const slides = document.querySelectorAll(".slide");
+    slides.forEach((slide) => {
+      const numeroDoSlide = parseInt(slide.id.split("slide-")[1]);
+      if (counter === 1 || counter === numeroDoSlide) {
+        document.getElementById(`slide-${numeroDoSlide}`).style.marginLeft =
+          counter === 1 ? 0 * 25 + "%" : -25 + "%";
+      }
+
+      if (counter === numeroDoSlide) {
+        document.getElementById(`radio${numeroDoSlide}`).checked = true;
+        document.querySelector(
+          `label[for="radio${numeroDoSlide}"]`
+        ).style.backgroundColor = "#fff";
+      } else {
+        document.getElementById(`radio${numeroDoSlide}`).checked = false;
+        document.querySelector(
+          `label[for="radio${numeroDoSlide}"]`
+        ).style.backgroundColor = "transparent";
+      }
+    });
     setPrevCategory(currentCategory);
 
     const intervalId = setInterval(() => {
@@ -240,12 +261,9 @@ const Carousel = ({
                 />
               ))}
               {images.map((image, key) => (
-                <div
-                  key={key + 1}
-                  className={`slide ${key + 1 === 1 ? "first" : ""}`}
-                >
+                <div key={key + 1} id={`slide-${key + 1}`} className="slide">
                   <div className="carousel-text">
-                    {loggedUser && (
+                    {loggedUser?.name && (
                       <>
                         <Dropdown className="float-end ms-4">
                           <Dropdown.Toggle

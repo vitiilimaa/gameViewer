@@ -89,12 +89,12 @@
       "alt": "Red Dead Redemption 2"
     },
     {
-      "title": "Smite",
-      "description": "Smite é um jogo eletrônico do gênero multiplayer online battle arena em terceira pessoa desenvolvido e publicado por Hi-Rez Studios para Microsoft Windows, PlayStation 4, Xbox One e Nintendo Switch.",
-      "src": "https://s1.mmommorpg.com/media/wide/smite-wide.jpg",
-      "category": "MOBA",
-      "alt": "Smite",
-      "id": 11
+      "id": 9,
+      "title": "TES",
+      "description": "TESTE",
+      "src": "https://meups.com.br/wp-content/uploads/2023/05/gtav-01.jpg",
+      "category": "FPS",
+      "alt": "TES"
     }
   ],
   "categories": [

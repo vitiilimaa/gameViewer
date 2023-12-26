@@ -2,9 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 150vh;
+  min-width: 100vw;
+  min-height: 100vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)),
     url("https://i.redd.it/d5g2jaawgw431.jpg");
   background-size: cover;
@@ -15,40 +14,4 @@
 .container-categories-text {
   width: 100%;
   margin-top: 10rem;
-}
-
-@media (min-width: 520px) {
-  .container-categories-text {
-    margin-top: 0;
-  }
-}
-
-@media (min-width: 768px) {
-  .container-categories-text {
-    margin-top: 10rem;
-  }
-
-  .categories-container {
-    height: 120vh;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container-categories-text {
-    margin-top: 10rem;
-  }
-
-  .categories-container {
-    height: 110vh;
-  }
-}
-
-@media (min-width: 1274px) {
-  .container-categories-text {
-    margin-top: 8rem;
-  }
-
-  .categories-container {
-    height: 100vh;
-  }
 }

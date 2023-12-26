@@ -1,28 +1,20 @@
-import { useState, useEffect } from "react";
 import "../styles/components/Header.css";
-import { Button, Modal } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 
-const CustomModal = ({ title, children, showModal }) => {
-  const [show, setShow] = useState(showModal)
-
-  useEffect(() => {
-console.log(showModal)
-console.log(show)
-    setShow(showModal);
-  }, [showModal]);
-
+const CustomModal = ({ title, body, footer, showModal, onShow, onHide }) => {
   return (
-    <Modal show={show} onHide={() => setShow(false)}>
-      <Modal.Header>
+    <Modal
+      centered={true}
+      show={showModal}
+      onShow={onShow}
+      onHide={onHide}
+      onEscapeKeyDown={onHide}
+    >
+      <Modal.Header closeButton>
         <Modal.Title className="fs-5">{title}</Modal.Title>
       </Modal.Header>
-      <Modal.Body>{children}</Modal.Body>
-      <Modal.Footer>
-        <Button onClick={() => setShow(false)}>
-          Cancelar
-        </Button>
-        <Button>Salvar</Button>
-      </Modal.Footer>
+      <Modal.Body>{body}</Modal.Body>
+      <Modal.Footer>{footer}</Modal.Footer>
     </Modal>
   );
 };

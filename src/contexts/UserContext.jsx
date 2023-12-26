@@ -1,16 +1,22 @@
-import { createContext } from "react";
-import { useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
-const UserContext = createContext()
+const UserContext = createContext();
 
-const UserContextProvider = ({children}) => {
-  const [loggedUser, setLoggedUser] = useState()
+const UserContextProvider = ({ children }) => {
+  const [loggedUser, setLoggedUser] = useState({});
 
-  const user = {
-    loggedUser, setLoggedUser
-  }
+  useEffect(() => {
+    setLoggedUser(JSON.parse(localStorage.getItem("user")));
+  }, []);
 
-  return <UserContext.Provider value={user}>{children}</UserContext.Provider>
-}
+  const sharedData = {
+    loggedUser,
+    setLoggedUser,
+  };
 
-export { UserContext, UserContextProvider }
+  return (
+    <UserContext.Provider value={sharedData}>{children}</UserContext.Provider>
+  );
+};
+
+export { UserContext, UserContextProvider };

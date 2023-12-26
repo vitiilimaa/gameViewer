@@ -1,23 +1,22 @@
 import { useState } from "react";
 import "../styles/components/Button.css";
 
-const Button = (
-  {
-    title,
-    onClick,
-    onShadow,
-    type = "button",
-    isLoading,
-    buttonTextStyle,
-    buttonHoverStyle,
-    buttonStyle,
-    containerStyle,
-    addClassButton = "",
-    addClassTextButton = "",
-    addClassContainer = "",
-    fontSize,
-  }
-) => {
+const Button = ({
+  title,
+  onClick,
+  onShadow,
+  type = "button",
+  isLoading,
+  icon,
+  buttonTextStyle,
+  buttonHoverStyle,
+  buttonStyle,
+  containerStyle,
+  addClassButton = "",
+  addClassTextButton = "",
+  addClassContainer = "",
+  fontSize,
+}) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -41,7 +40,10 @@ const Button = (
           {isLoading ? (
             <div className="spinner-border text-light loading" />
           ) : (
-            title
+            <>
+              {icon}
+              {title}
+            </>
           )}
         </span>
       </button>

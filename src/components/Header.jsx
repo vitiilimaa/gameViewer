@@ -1,12 +1,23 @@
 import "../styles/components/Header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGamepad, faBars } from "@fortawesome/free-solid-svg-icons";
+import {
+  faGamepad,
+  faBars,
+  faDoorOpen,
+} from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../contexts/UserContext";
+import { toast } from "react-toastify";
 
 const Header = () => {
-  const { loggedUser } = useContext(UserContext);
+  const { loggedUser, setLoggedUser } = useContext(UserContext);
+
+  const handleClickButton = () => {
+    localStorage.removeItem("user");
+    setLoggedUser({});
+    toast.success("Você saiu da sua sessão com sucesso.");
+  };
 
   return (
     <header>
@@ -54,14 +65,40 @@ const Header = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                {!loggedUser ? (
+                {!loggedUser?.name ? (
                   <Link className="nav-link text-light" to="/login">
                     LOGIN
                   </Link>
                 ) : (
-                  <Link className="nav-link text-light" to="/categorias">
-                    {loggedUser.name.toUpperCase()}
-                  </Link>
+                  <div className="dropdown">
+                    <a
+                      className="dropdown-toggle normal-text text-light"
+                      href="#"
+                      role="button"
+                      style={{
+                        fontSize: 16,
+                      }}
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      {loggedUser.name?.toUpperCase()}{" "}
+                    </a>
+                    <ul className="dropdown-menu dropdown-menu-dark">
+                      <li className="normal-text">
+                        <Link
+                          className="dropdown-item"
+                          style={{
+                            fontSize: 16,
+                          }}
+                          to="/"
+                          onClick={() => handleClickButton()}
+                        >
+                          <FontAwesomeIcon className="me-3" icon={faDoorOpen} />
+                          Sair
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
                 )}
               </li>
             </ul>

@@ -114,7 +114,6 @@ const Categories = () => {
     return (
       <>
         <TextInput
-          inputStyle={isEditModal ? { cursor: "context-menu" } : null}
           id="category"
           title="Categoria"
           value={fields.category.value || ""}

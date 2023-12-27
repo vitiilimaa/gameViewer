@@ -114,7 +114,6 @@ const Categories = () => {
     return (
       <>
         <TextInput
-          readOnly={isEditModal ? true : false}
           inputStyle={isEditModal ? { cursor: "context-menu" } : null}
           id="category"
           title="Categoria"

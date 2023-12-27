@@ -13,7 +13,6 @@ const addImage = async (obj, showMessage = true) => {
 };
 
 const editImage = async (obj, showMessage = true) => {
-console.log('obj', obj)
   try {
     const url = `http://localhost:3000/images/${obj.id}`;
     await axios.put(url, obj).then((response) => response.data);

@@ -34,7 +34,6 @@
   "images": [
     {
       "id": 2,
-      "order": 1,
       "title": "Silent Hill 2",
       "description": "Silent Hill 2 é um jogo eletrônico de terror de sobrevivência desenvolvido pela Team Silent da Konami Computer Entertainment Tokyo e publicado pela Konami.",
       "src": "https://preview.redd.it/silent-hill-2-remake-official-4k-wallpaper-v0-fq9jldxn20v91.png?width=3840&format=png&auto=webp&s=cc8ff9a1c21123762dc9dc570c7667234146c78b",
@@ -88,20 +87,11 @@
     },
     {
       "id": 8,
-      "order": 2,
       "title": "Red Dead Redemption 2",
       "description": "Red Dead Redemption 2 é um jogo eletrônico de ação-aventura desenvolvido e publicado pela Rockstar Games. É o terceiro título da série Red Dead e uma prequela de Red Dead Redemption, tendo sido lançado em outubro de 2018 para PlayStation 4 e Xbox One e em novembro de 2019 para Microsoft Windows e Google Stadia.",
       "src": "https://assets.xboxservices.com/assets/68/70/6870960a-ce3a-4728-8575-953de9cdc749.jpg?n=Red-Dead-Redemption-II_Gallery-0_1350x759_02.jpg",
       "category": "TERROR",
       "alt": "Red Dead Redemption 2"
-    },
-    {
-      "id": 11,
-      "title": "sdasd",
-      "description": "sadasd",
-      "src": "asdasdas",
-      "category": "TERROR",
-      "alt": "sdasd"
     },
     {
       "id": 12,

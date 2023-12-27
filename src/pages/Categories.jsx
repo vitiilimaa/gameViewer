@@ -1,5 +1,5 @@
 import "../styles/pages/Categories.css";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useRef } from "react";
 import { Carousel, Button, TextInput, CustomModal } from "../components";
 import data from "../../mock/db.json";
 import validateFields from "../helpers/validateFields";
@@ -14,13 +14,20 @@ import {
   faPenToSquare,
   faTrash,
   faPlus,
+  faUpDownLeftRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { UserContext } from "../contexts/UserContext";
+import { editImage } from "../services/imageApiServices";
 
 const Categories = () => {
   const { loggedUser } = useContext(UserContext);
   const [selectedButton, setSelectedButton] = useState(data.categories[0].name);
   const [showModal, setShowModal] = useState(false);
+  const [categoryImages, setCategoryImages] = useState(
+    data.images.filter((img) => img.category === selectedButton?.toUpperCase())
+  );
+  const dragCategoryImages = useRef(0);
+  const draggedOverCategoryImages = useRef(0);
   const [modalTitle, setModalTitle] = useState("");
   const [fields, setFields] = useState({
     category: {
@@ -33,7 +40,7 @@ const Categories = () => {
 
   useEffect(() => {
     const action = modalTitle.split(" ")[0];
-    if (action === "EDITAR" || action === "REMOVER") {
+    if (action !== "ADICIONAR") {
       setFields((prevState) => ({
         ...prevState,
         category: {
@@ -41,10 +48,16 @@ const Categories = () => {
           value: fields.category.value,
         },
       }));
+      setCategoryImages(
+        data.images
+          .filter((img) => img.category === selectedButton?.toUpperCase())
+          .slice()
+          .sort((a, b) => a.order - b.order)
+      );
     } else {
       clearFields();
     }
-  }, [showModal]);
+  }, [showModal, selectedButton]);
 
   const fieldsValidation = (field, newValue) => {
     const { existError, message } = validateFields(field, newValue);
@@ -84,6 +97,53 @@ const Categories = () => {
     );
   };
 
+  const handleSort = () => {
+    const categoryImagesClone = [...categoryImages];
+    const temp = categoryImagesClone[dragCategoryImages.current];
+    categoryImagesClone[dragCategoryImages.current] =
+      categoryImagesClone[draggedOverCategoryImages.current];
+    categoryImagesClone[draggedOverCategoryImages.current] = temp;
+    setCategoryImages((prevState) => {
+      const updatedArray = categoryImagesClone.map((item, index) => ({
+        ...item,
+        order: index + 1,
+      }));
+
+      return updatedArray;
+    });
+  };
+
+  const showTagBox = () => {
+    return (
+      <div className="mt-4" style={{ cursor: "context-menu" }}>
+        <span className="fw-bold">JOGOS DA CATEGORIA:</span>
+        {categoryImages.map((img, key) => (
+          <div
+            className="mt-2"
+            style={{
+              border: "1px solid black",
+              padding: 10,
+            }}
+            key={key}
+            draggable
+            onDragStart={() => (dragCategoryImages.current = key)}
+            onDragEnter={() => (draggedOverCategoryImages.current = key)}
+            onDragEnd={handleSort}
+            onDragOver={(e) => e.preventDefault()}
+          >
+            {key + 1} - {img?.title.toUpperCase()}
+            <FontAwesomeIcon
+              style={{ cursor: "pointer", marginBottom: 2, color: "#e11414" }}
+              className="ms-1"
+              fontSize={12}
+              icon={faUpDownLeftRight}
+            />
+          </div>
+        ))}
+      </div>
+    );
+  };
+
   const addOrEditCategoryElement = () => {
     return (
       <>
@@ -95,6 +155,8 @@ const Categories = () => {
           errorMessage={fields.category.errorMessage}
           onChangeValue={(newValue) => fieldsValidation("category", newValue)}
         />
+        {modalTitle === `EDITAR ${selectedButton?.toUpperCase()}` &&
+          showTagBox()}
       </>
     );
   };
@@ -119,14 +181,16 @@ const Categories = () => {
         name: fields.category.value?.toUpperCase(),
       };
 
+console.log(obj)
       if (modalTitle === "ADICIONAR CATEGORIA") {
         addCategory(obj);
         setSelectedButton(obj.name);
       } else if (modalTitle === `EDITAR ${selectedButton?.toUpperCase()}`) {
         editCategory(obj);
+        categoryImages.forEach((img) => editImage(img, false));
         setSelectedButton(obj.name);
       } else {
-        deleteCategory(obj.id);
+        deleteCategory(obj?.id);
         setSelectedButton(data?.categories[0].name);
       }
       setShowModal(false);
@@ -235,9 +299,7 @@ const Categories = () => {
         )}
       </div>
       <Carousel
-        images={data.images.filter(
-          (image, _) => image.category === selectedButton
-        )}
+        images={categoryImages}
         addClassContainer="w-100 px-3 my-5"
         currentCategory={selectedButton}
       />

@@ -7,10 +7,12 @@ import validateFields from "../helpers/validateFields";
 import getUser from "../services/getUser";
 import { useNavigate, Link } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext";
+import { LoadingContext } from "../contexts/LoadingContext";
 
 const Login = () => {
   const navigate = useNavigate();
   const { loggedUser, setLoggedUser } = useContext(UserContext);
+  const { loadingScreen, setLoadingScreen } = useContext(LoadingContext);
   const [isLoading, setIsLoading] = useState(false);
   const [fields, setFields] = useState({
     email: {
@@ -53,9 +55,16 @@ const Login = () => {
             },
           }))
         );
+
+        if (userData) {
+          setLoadingScreen(true);
+          setTimeout(() => {
+            navigate("/");
+            setLoggedUser(userData);
+          }, 1000);
+        }
+
         setIsLoading(false);
-        setLoggedUser(userData);
-        navigate("/");
       }, 2000);
     } else {
       Object.keys(fields).map((field) => {
@@ -67,7 +76,7 @@ const Login = () => {
   return (
     <div className="login-container flex-column justify-content-center px-4 py-5">
       {!loggedUser?.name ? (
-        <form className="form-login-container d-flex flex-column justify-content-center">
+        <form className="form-login-container">
           <div className="d-flex justify-content-center align-items-center flex-wrap">
             <p className="fw-bold w-100 text-center fs-4">BEM-VINDO(A) </p>
             <FontAwesomeIcon fontSize={56} icon={faGamepad} />
@@ -103,10 +112,16 @@ const Login = () => {
         </form>
       ) : (
         <>
-          <h1 className="normal-text text-center px-3">
-            VOCÊ JÁ ESTÁ LOGADO.
-          </h1>
-          <Link className="mt-4 btn text-light fw-normal" to="/">
+          <h1 className="normal-text text-center px-3">VOCÊ JÁ ESTÁ LOGADO.</h1>
+          <Link
+            className="mt-4 btn text-light fw-normal"
+            onClick={() => {
+              setLoadingScreen(true);
+              setTimeout(() => {
+                navigate("/");
+              }, 1000);
+            }}
+          >
             <FontAwesomeIcon icon={faArrowLeft} className="me-3" />
             VOLTAR AO INÍCIO
           </Link>

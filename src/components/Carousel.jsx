@@ -41,6 +41,7 @@ const Carousel = ({
       errorMessage: "",
     },
   });
+  const imageAscendingArray = images.slice().sort((a, b) => a.order - b.order);
 
   useEffect(() => {
     const action = modalTitle.split(" ")[0];
@@ -63,26 +64,36 @@ const Carousel = ({
       setCounter(1);
     }
 
+    const handleSlideStyles = (numeroDoSlide, marginLeft) => {
+      const slideElement = document.getElementById(`slide-${numeroDoSlide}`);
+      const radioElement = document.getElementById(`radio${numeroDoSlide}`);
+      const labelElement = document.querySelector(
+        `label[for="radio${numeroDoSlide}"]`
+      );
+
+      slideElement.style.marginLeft = marginLeft;
+      radioElement.checked = counter === numeroDoSlide;
+      labelElement.style.backgroundColor =
+        counter === numeroDoSlide ? "#fff" : "transparent";
+    };
+
     const slides = document.querySelectorAll(".slide");
     slides.forEach((slide) => {
       const numeroDoSlide = parseInt(slide.id.split("slide-")[1]);
+
       if (counter === 1 || counter === numeroDoSlide) {
-        document.getElementById(`slide-${numeroDoSlide}`).style.marginLeft =
-          counter === 1 ? 0 * 25 + "%" : -25 + "%";
+        handleSlideStyles(numeroDoSlide, counter === 1 ? 0 + "%" : -25 + "%");
       }
 
-      if (counter === numeroDoSlide) {
-        document.getElementById(`radio${numeroDoSlide}`).checked = true;
-        document.querySelector(
-          `label[for="radio${numeroDoSlide}"]`
-        ).style.backgroundColor = "#fff";
+      if (numeroDoSlide > counter) {
+        handleSlideStyles(numeroDoSlide, 0);
+      } else if (numeroDoSlide !== 1) {
+        handleSlideStyles(numeroDoSlide, -25 + "%");
       } else {
-        document.getElementById(`radio${numeroDoSlide}`).checked = false;
-        document.querySelector(
-          `label[for="radio${numeroDoSlide}"]`
-        ).style.backgroundColor = "transparent";
+        handleSlideStyles(1, 0);
       }
     });
+
     setPrevCategory(currentCategory);
 
     const intervalId = setInterval(() => {
@@ -92,7 +103,7 @@ const Carousel = ({
     return () => {
       clearInterval(intervalId);
     };
-  }, [counter]);
+  }, [counter, currentCategory]);
 
   const nextImage = () => {
     if (counter === images.length) setCounter(1);
@@ -250,17 +261,19 @@ const Carousel = ({
         {images.length > 0 ? (
           <>
             <div className="slides">
-              {images.map((_, key) => (
+              {imageAscendingArray.map((_, key) => (
                 <input
                   key={key + 1}
                   type="radio"
                   name="radio-btn"
                   id={`radio${key + 1}`}
                   checked={counter === key + 1}
-                  onChange={() => setCounter(key + 1)}
+                  onChange={() => {
+                    setCounter(key + 1);
+                  }}
                 />
               ))}
-              {images.map((image, key) => (
+              {imageAscendingArray.map((image, key) => (
                 <div key={key + 1} id={`slide-${key + 1}`} className="slide">
                   <div className="carousel-text">
                     {loggedUser?.name && (
@@ -331,13 +344,13 @@ const Carousel = ({
                 </div>
               ))}
               <div className="navigation-auto">
-                {images.map((_, key) => (
+                {imageAscendingArray.map((_, key) => (
                   <div key={key + 1} className={`auto-btn${key + 1}`} />
                 ))}
               </div>
             </div>
             <div className="manual-navigation">
-              {images.map((_, key) => (
+              {imageAscendingArray.map((_, key) => (
                 <label
                   key={key}
                   htmlFor={`radio${key + 1}`}

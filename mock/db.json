@@ -34,6 +34,7 @@
   "images": [
     {
       "id": 2,
+      "order": 1,
       "title": "Silent Hill 2",
       "description": "Silent Hill 2 é um jogo eletrônico de terror de sobrevivência desenvolvido pela Team Silent da Konami Computer Entertainment Tokyo e publicado pela Konami.",
       "src": "https://preview.redd.it/silent-hill-2-remake-official-4k-wallpaper-v0-fq9jldxn20v91.png?width=3840&format=png&auto=webp&s=cc8ff9a1c21123762dc9dc570c7667234146c78b",
@@ -42,6 +43,7 @@
     },
     {
       "id": 3,
+      "order": 2,
       "title": "League of Legends",
       "description": "League of Legends é um jogo eletrônico do gênero multiplayer online battle arena desenvolvido e publicado pela Riot Games. Foi lançado em outubro de 2009 para Microsoft Windows e em março de 2013 para macOS.",
       "src": "https://www.pixel4k.com/wp-content/uploads/2019/11/lee-sin-lol-splash-art-league-of-legends-lol_1574101544.jpg",
@@ -50,6 +52,7 @@
     },
     {
       "id": 4,
+      "order": 1,
       "title": "DotA 2",
       "description": "Dota 2 é um jogo eletrônico do gênero multiplayer online battle arena desenvolvido e publicado pela Valve. Lançado em 2013, o jogo é uma sequência de Defense of the Ancients, uma modificação criada pela comunidade para o jogo Warcraft III: Reign of Chaos, da Blizzard Entertainment.",
       "src": "https://e0.pxfuel.com/wallpapers/285/75/desktop-wallpaper-dota-2-gets-a-windranger-arcana-with-new-model-second-style-effects-more.jpg",
@@ -58,6 +61,7 @@
     },
     {
       "id": 5,
+      "order": 3,
       "title": "Counter Strike 2",
       "description": "Counter-Strike 2 é um jogo tático multijogador de tiro em primeira pessoa de 2023 desenvolvido e publicado pela Valve. É a quinta parcela principal da série Counter-Strike.",
       "src": "https://cdn.akamai.steamstatic.com/apps/csgo/images/csgo_react/social/cs2.jpg",
@@ -66,6 +70,7 @@
     },
     {
       "id": 6,
+      "order": 1,
       "title": "Valorant",
       "description": "Valorant é um jogo eletrônico multijogador gratuito para jogar de tiro em primeira pessoa desenvolvido e publicado pela Riot Games.",
       "src": "https://t.ctcdn.com.br/w7VHbi-qpIMv-2AU1iR6hr4ZYZE=/1920x1080/smart/i587116.jpeg",
@@ -74,6 +79,7 @@
     },
     {
       "id": 7,
+      "order": 4,
       "title": "Call of Duty: Warzone",
       "description": "Call of Duty: Warzone é um jogo eletrônico free-to-play do gênero battle royale desenvolvido pela Infinity Ward e Raven Software e publicado pela Activision. Lançado em 10 de março de 2020 para Microsoft Windows, PlayStation 4 e Xbox One, o jogo faz parte do título Call of Duty: Modern Warfare, mas não requer compra.",
       "src": "https://www.pixel4k.com/wp-content/uploads/2020/08/call-of-duty-warzone_1596993314.jpg",
@@ -82,6 +88,7 @@
     },
     {
       "id": 8,
+      "order": 2,
       "title": "Red Dead Redemption 2",
       "description": "Red Dead Redemption 2 é um jogo eletrônico de ação-aventura desenvolvido e publicado pela Rockstar Games. É o terceiro título da série Red Dead e uma prequela de Red Dead Redemption, tendo sido lançado em outubro de 2018 para PlayStation 4 e Xbox One e em novembro de 2019 para Microsoft Windows e Google Stadia.",
       "src": "https://assets.xboxservices.com/assets/68/70/6870960a-ce3a-4728-8575-953de9cdc749.jpg?n=Red-Dead-Redemption-II_Gallery-0_1350x759_02.jpg",
@@ -89,12 +96,20 @@
       "alt": "Red Dead Redemption 2"
     },
     {
-      "id": 9,
-      "title": "TES",
-      "description": "TESTE",
-      "src": "https://meups.com.br/wp-content/uploads/2023/05/gtav-01.jpg",
-      "category": "FPS",
-      "alt": "TES"
+      "id": 11,
+      "title": "sdasd",
+      "description": "sadasd",
+      "src": "asdasdas",
+      "category": "TERROR",
+      "alt": "sdasd"
+    },
+    {
+      "id": 12,
+      "title": "asdasda",
+      "description": "asdas",
+      "src": "asd",
+      "category": "MOBA",
+      "alt": "asdasda"
     }
   ],
   "categories": [

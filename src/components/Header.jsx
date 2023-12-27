@@ -7,33 +7,42 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useContext } from "react";
 import { UserContext } from "../contexts/UserContext";
+import { LoadingContext } from "../contexts/LoadingContext";
 import { toast } from "react-toastify";
-import CustomLink from "./CustomLink";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const { loggedUser, setLoggedUser } = useContext(UserContext);
+  const { setLoadingScreen } = useContext(LoadingContext);
+  const navigate = useNavigate();
 
-  const handleClickButton = () => {
-    localStorage.removeItem("user");
-    setLoggedUser({});
-    toast.success("Você saiu da sua sessão com sucesso.");
+  const accessRoute = (route) => {
+    setLoadingScreen(true);
+    setTimeout(() => navigate(route), 1000);
+  };
+
+  const handleExitLink = () => {
+    setLoadingScreen(true);
+    setTimeout(() => {
+      localStorage.removeItem("user");
+      setLoggedUser({});
+      navigate("/");
+      toast.success("Você saiu da sua sessão com sucesso.");
+    }, 1000);
   };
 
   return (
     <header>
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid px-0 px-sm-5">
-          <CustomLink
-            title={
-              <>
-                <FontAwesomeIcon color="#fff" icon={faGamepad} />
-                <span className="text-light">GAME VIEWER</span>
-              </>
-            }
-            addClass="navbar-brand ms-3 d-flex align-items-center column-gap-3"
-            route="/"
-            onClick={() => setLoadingScreen(true)}
-          />
+          <Link
+            className="navbar-brand ms-3 d-flex align-items-center column-gap-3"
+            onClick={() => accessRoute("/")}
+          >
+            {" "}
+            <FontAwesomeIcon color="#fff" icon={faGamepad} />
+            <span className="text-light">GAME VIEWER</span>
+          </Link>
           <button
             className="navbar-toggler me-2"
             type="button"
@@ -51,29 +60,29 @@ const Header = () => {
           >
             <ul className="navbar-nav column-gap-4">
               <li className="nav-item">
-                <CustomLink
-                  title="INÍCIO"
-                  addClass="nav-link active text-light"
-                  route="/"
-                  onClick={() => setLoadingScreen(true)}
-                />
+                <Link
+                  className="nav-link active text-light"
+                  onClick={() => accessRoute("/")}
+                >
+                  INÍCIO
+                </Link>
               </li>
               <li className="nav-item">
-                <CustomLink
-                  title="CATEGORIAS"
+                <Link
                   className="nav-link active text-light"
-                  route="/categorias"
-                  onClick={() => setLoadingScreen(true)}
-                />
+                  onClick={() => accessRoute("/categorias")}
+                >
+                  CATEGORIAS
+                </Link>
               </li>
               <li className="nav-item">
                 {!loggedUser?.name ? (
-                  <CustomLink
-                    title="LOGIN"
-                    addClass="nav-link text-light"
-                    route="/login"
-                    onClick={() => setLoadingScreen(true)}
-                  />
+                  <Link
+                    className="nav-link text-light"
+                    onClick={() => accessRoute("/login")}
+                  >
+                    LOGIN
+                  </Link>
                 ) : (
                   <div className="dropdown">
                     <a
@@ -90,24 +99,14 @@ const Header = () => {
                     </a>
                     <ul className="dropdown-menu dropdown-menu-dark">
                       <li className="normal-text">
-                        <CustomLink
-                          title={
-                            <>
-                              {" "}
-                              <FontAwesomeIcon
-                                className="me-3"
-                                icon={faDoorOpen}
-                              />
-                              Sair
-                            </>
-                          }
-                          addClass="dropdown-item"
-                          containerStyle={{
-                            fontSize: 16,
-                          }}
-                          route="/"
-                          onClick={() => handleClickButton()}
-                        />
+                        <Link
+                          className="dropdown-item"
+                          style={{ fontSize: 16 }}
+                          onClick={() => handleExitLink()}
+                        >
+                          <FontAwesomeIcon className="me-3" icon={faDoorOpen} />
+                          Sair
+                        </Link>
                       </li>
                     </ul>
                   </div>

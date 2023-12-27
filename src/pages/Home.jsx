@@ -5,8 +5,15 @@ import { useContext } from "react";
 import { LoadingContext } from "../contexts/LoadingContext";
 
 const Home = () => {
-  const { setLoadingScreen } = useContext(LoadingContext)
+  const { setLoadingScreen } = useContext(LoadingContext);
   const navigate = useNavigate();
+
+  const handleClickButton = () => {
+    setLoadingScreen(true);
+    setTimeout(() => {
+      navigate("/categorias");
+    }, 1000);
+  };
 
   return (
     <div className="home-container pb-5">
@@ -19,10 +26,7 @@ const Home = () => {
         <Button
           title="VEJA AQUI"
           fontSize={20}
-          onClick={() => {
-            navigate("/categorias")
-            setLoadingScreen(true)
-          }}
+          onClick={() => handleClickButton()}
           addClassContainer="mt-5"
           addClassButton="px-5"
         />

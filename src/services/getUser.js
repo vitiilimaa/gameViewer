@@ -5,7 +5,7 @@ const getUser = async (obj) => {
   try {
     const url = "http://localhost:3000/users";
     const users = await axios.get(url).then((response) => response.data);
-    const user = users.find(
+   const user = users.find(
       (user) =>
         user.email === obj.email.value && user.password === obj.password.value
     );

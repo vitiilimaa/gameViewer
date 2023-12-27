@@ -60,21 +60,21 @@
     },
     {
       "id": 5,
-      "order": 3,
+      "order": 2,
       "title": "Counter Strike 2",
       "description": "Counter-Strike 2 é um jogo tático multijogador de tiro em primeira pessoa de 2023 desenvolvido e publicado pela Valve. É a quinta parcela principal da série Counter-Strike.",
       "src": "https://cdn.akamai.steamstatic.com/apps/csgo/images/csgo_react/social/cs2.jpg",
       "alt": "",
-      "category": "FPS"
+      "category": "TESTE"
     },
     {
       "id": 7,
-      "order": 4,
+      "order": 1,
       "title": "Call of Duty: Warzone",
       "description": "Call of Duty: Warzone é um jogo eletrônico free-to-play do gênero battle royale desenvolvido pela Infinity Ward e Raven Software e publicado pela Activision. Lançado em 10 de março de 2020 para Microsoft Windows, PlayStation 4 e Xbox One, o jogo faz parte do título Call of Duty: Modern Warfare, mas não requer compra.",
       "src": "https://www.pixel4k.com/wp-content/uploads/2020/08/call-of-duty-warzone_1596993314.jpg",
       "alt": "",
-      "category": "FPS"
+      "category": "TESTE"
     },
     {
       "id": 8,
@@ -177,7 +177,7 @@
     },
     {
       "id": 2,
-      "name": "FPS"
+      "name": "TESTE"
     },
     {
       "id": 3,

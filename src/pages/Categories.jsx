@@ -179,7 +179,12 @@ const Categories = () => {
         setCategoryImages([]);
       } else if (isEditModal) {
         editCategory(obj);
-        categoryImages.forEach((img) => editImage(img, false));
+        categoryImages.forEach((img) => {
+          const objImage = Object.assign(img, {
+            category: fields.category.value,
+          });
+          editImage(objImage, false);
+        });
         setSelectedButton(obj.name);
       } else {
         deleteCategory(obj?.id);

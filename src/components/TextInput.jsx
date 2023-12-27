@@ -10,7 +10,10 @@ const TextInput = ({
   value,
   onChangeValue,
   isValidate,
+  readOnly,
   errorMessage,
+  containerStyle,
+  inputStyle,
   addClassToContainer = "",
 }) => {
   const [typeInput, setTypeInput] = useState(type);
@@ -24,10 +27,14 @@ const TextInput = ({
   };
 
   return (
-    <div className={`form-floating ${addClassToContainer}`}>
+    <div
+      style={containerStyle}
+      className={`form-floating ${addClassToContainer}`}
+    >
       {type?.toUpperCase() === "MEMO" ? (
         <>
           <textarea
+            readOnly={readOnly}
             className={`form-control ${
               isValidate === false ? "is-invalid" : ""
             }`}
@@ -38,7 +45,7 @@ const TextInput = ({
             onChange={(e) => onChangeValue(e.target.value)}
             cols={30}
             rows={10}
-            style={{ height: 200, resize: "none" }}
+            style={{ ...inputStyle, height: 200, resize: "none" }}
             autoComplete="off"
           />
           <div className="invalid-feedback">{errorMessage}</div>
@@ -46,6 +53,8 @@ const TextInput = ({
       ) : (
         <>
           <input
+            style={inputStyle}
+            readOnly={readOnly}
             className={`form-control ${
               isValidate === false ? "is-invalid" : ""
             }`}
@@ -61,7 +70,11 @@ const TextInput = ({
             <FontAwesomeIcon
               id="icon-password"
               icon={showPassword ? faEyeSlash : faEye}
-              style={typeInput === "text" ? { width: 24, height: 24, right: 18 } : null}
+              style={
+                typeInput === "text"
+                  ? { width: 24, height: 24, right: 18 }
+                  : null
+              }
               onClick={() => handleClickIconPassword()}
             />
           )}

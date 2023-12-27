@@ -204,10 +204,16 @@ const Carousel = ({
         alt: fields.title.value,
       };
 
-      if (modalTitle === "ADICIONAR JOGO") addImage(obj);
-      else if (modalTitle === `EDITAR ${selectedSlide.title?.toUpperCase()}`)
+      if (modalTitle === "ADICIONAR JOGO") {
+        addImage(obj);
+        setCounter(0)
+      } else if (
+        modalTitle === `EDITAR ${selectedSlide.title?.toUpperCase()}`
+      ) {
         editImage(obj);
-      else deleteImage(selectedSlide.id);
+      } else {
+        deleteImage(selectedSlide.id);
+      }
       setShowModal(false);
     } else {
       Object.keys(fields).map((field) => {
@@ -258,7 +264,7 @@ const Carousel = ({
             : ""
         }`}
       >
-        {images.length > 0 ? (
+        {images.length > 0 || !loggedUser?.name ? (
           <>
             <div className="slides">
               {imageAscendingArray.map((_, key) => (

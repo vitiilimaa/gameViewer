@@ -42,7 +42,7 @@
     },
     {
       "id": 3,
-      "order": 2,
+      "order": 1,
       "title": "League of Legends",
       "description": "League of Legends é um jogo eletrônico do gênero multiplayer online battle arena desenvolvido e publicado pela Riot Games. Foi lançado em outubro de 2009 para Microsoft Windows e em março de 2013 para macOS.",
       "src": "https://www.pixel4k.com/wp-content/uploads/2019/11/lee-sin-lol-splash-art-league-of-legends-lol_1574101544.jpg",
@@ -51,7 +51,7 @@
     },
     {
       "id": 4,
-      "order": 1,
+      "order": 2,
       "title": "DotA 2",
       "description": "Dota 2 é um jogo eletrônico do gênero multiplayer online battle arena desenvolvido e publicado pela Valve. Lançado em 2013, o jogo é uma sequência de Defense of the Ancients, uma modificação criada pela comunidade para o jogo Warcraft III: Reign of Chaos, da Blizzard Entertainment.",
       "src": "https://e0.pxfuel.com/wallpapers/285/75/desktop-wallpaper-dota-2-gets-a-windranger-arcana-with-new-model-second-style-effects-more.jpg",
@@ -68,15 +68,6 @@
       "category": "FPS"
     },
     {
-      "id": 6,
-      "order": 1,
-      "title": "Valorant",
-      "description": "Valorant é um jogo eletrônico multijogador gratuito para jogar de tiro em primeira pessoa desenvolvido e publicado pela Riot Games.",
-      "src": "https://t.ctcdn.com.br/w7VHbi-qpIMv-2AU1iR6hr4ZYZE=/1920x1080/smart/i587116.jpeg",
-      "alt": "Call of Duty: Warzone é um jogo eletrônico free-to-play do gênero battle royale desenvolvido pela Infinity Ward e Raven Software e publicado pela Activision. Lançado em 10 de março de 2020 para Microsoft Windows, PlayStation 4 e Xbox One, o jogo faz parte do título Call of Duty: Modern Warfare, mas não requer compra.",
-      "category": "FPS"
-    },
-    {
       "id": 7,
       "order": 4,
       "title": "Call of Duty: Warzone",
@@ -87,11 +78,11 @@
     },
     {
       "id": 8,
-      "title": "Red Dead Redemption 2",
-      "description": "Red Dead Redemption 2 é um jogo eletrônico de ação-aventura desenvolvido e publicado pela Rockstar Games. É o terceiro título da série Red Dead e uma prequela de Red Dead Redemption, tendo sido lançado em outubro de 2018 para PlayStation 4 e Xbox One e em novembro de 2019 para Microsoft Windows e Google Stadia.",
-      "src": "https://assets.xboxservices.com/assets/68/70/6870960a-ce3a-4728-8575-953de9cdc749.jpg?n=Red-Dead-Redemption-II_Gallery-0_1350x759_02.jpg",
+      "title": "RDR 2",
+      "description": "RDR 2 é um jogo eletrônico de ação-aventura desenvolvido e publicado pela Rockstar Games. É o terceiro título da série Red Dead e uma prequela de Red Dead Redemption, tendo sido lançado em outubro de 2018 para PlayStation 4 e Xbox One e em novembro de 2019 para Microsoft Windows e Google Stadia.",
+      "src": "https://i.pinimg.com/originals/3d/c7/92/3dc792956e547ff736cd9dea580295af.jpg",
       "category": "TERROR",
-      "alt": "Red Dead Redemption 2"
+      "alt": "RDR 2"
     },
     {
       "id": 12,
@@ -99,7 +90,80 @@
       "description": "asdas",
       "src": "asd",
       "category": "MOBA",
-      "alt": "asdasda"
+      "alt": "asdasda",
+      "order": 3
+    },
+    {
+      "id": 15,
+      "title": "asdda",
+      "description": "asdsad",
+      "src": "https://assets.nuuvem.com/image/upload/t_screenshot_full/v1/products/628a60ee48479300174bcd23/screenshots/nczuxfypyc13m3xy2ha9.jpg",
+      "category": "ASDASDASAS",
+      "alt": "asdda"
+    },
+    {
+      "id": 16,
+      "title": "asdsad",
+      "description": "asdas",
+      "src": "https://assets.nuuvem.com/image/upload/t_screenshot_full/v1/products/628a60ee48479300174bcd23/screenshots/nczuxfypyc13m3xy2ha9.jpg",
+      "category": "ASDASD",
+      "alt": "asdsad"
+    },
+    {
+      "id": 17,
+      "title": "asdsa",
+      "description": "dsda",
+      "src": "dhttps://assets.nuuvem.com/image/upload/t_screenshot_full/v1/products/628a60ee48479300174bcd23/screenshots/nczuxfypyc13m3xy2ha9.jpg",
+      "category": "ASDSAS",
+      "alt": "asdsa"
+    },
+    {
+      "id": 18,
+      "title": "asdas",
+      "description": "asdd",
+      "src": "https://assets.nuuvem.com/image/upload/t_screenshot_full/v1/products/628a60ee48479300174bcd23/screenshots/nczuxfypyc13m3xy2ha9.jpg",
+      "category": "ASDAD",
+      "alt": "asdas"
+    },
+    {
+      "id": 19,
+      "title": "asds",
+      "description": "asd",
+      "src": "https://assets.nuuvem.com/image/upload/t_screenshot_full/v1/products/628a60ee48479300174bcd23/screenshots/nczuxfypyc13m3xy2ha9.jpg",
+      "category": "ASDASDS",
+      "alt": "asds"
+    },
+    {
+      "id": 20,
+      "title": "asd",
+      "description": "asdasd",
+      "src": "https://assets.nuuvem.com/image/upload/t_screenshot_full/v1/products/628a60ee48479300174bcd23/screenshots/nczuxfypyc13m3xy2ha9.jpg",
+      "category": "ASDSA",
+      "alt": "asd"
+    },
+    {
+      "id": 21,
+      "title": "asd",
+      "description": "asd",
+      "src": "https://assets.nuuvem.com/image/upload/t_screenshot_full/v1/products/628a60ee48479300174bcd23/screenshots/nczuxfypyc13m3xy2ha9.jpg",
+      "category": "ASDASDA",
+      "alt": "asd"
+    },
+    {
+      "id": 23,
+      "title": "Resident Evil 2 Remake",
+      "description": "Resident Evil 2. Chamado no Japão de Biohazard RE:2, é um jogo eletrônico de survival horror desenvolvido e publicado pela Capcom, sendo um remake do jogo original de 1998.",
+      "src": "https://sm.ign.com/ign_br/screenshot/default/resident-evil-2-remake-xbox-one-file-sizejpgoptimal_gkz5.jpg",
+      "category": "SURVIVAL HORROR",
+      "alt": "Resident Evil 2 Remake"
+    },
+    {
+      "id": 24,
+      "title": "asdas",
+      "description": "asdas",
+      "src": "https://sm.ign.com/ign_br/screenshot/default/resident-evil-2-remake-xbox-one-file-sizejpgoptimal_gkz5.jpg",
+      "category": "ASDDAS",
+      "alt": "asdas"
     }
   ],
   "categories": [
@@ -114,6 +178,10 @@
     {
       "id": 2,
       "name": "FPS"
+    },
+    {
+      "id": 3,
+      "name": "SOBREVIVÊNCIA"
     }
   ]
 }

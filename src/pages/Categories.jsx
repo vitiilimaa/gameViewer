@@ -37,9 +37,12 @@ const Categories = () => {
       errorMessage: "",
     },
   });
+  const isAddModal = modalTitle === "ADICIONAR CATEGORIA" ? true : false;
+  const isEditModal =
+    modalTitle === `EDITAR ${selectedButton?.toUpperCase()}` ? true : false;
 
   useEffect(() => {
-    const action = modalTitle.split(" ")[0];
+    const action = showModal ? modalTitle.split(" ")[0] : "";
     if (action !== "ADICIONAR") {
       fieldsValidation("category", fields.category.value);
       setCategoryImages(
@@ -111,6 +114,8 @@ const Categories = () => {
     return (
       <>
         <TextInput
+          readOnly={isEditModal ? true : false}
+          inputStyle={isEditModal ? { cursor: "context-menu" } : null}
           id="category"
           title="Categoria"
           value={fields.category.value || ""}
@@ -118,7 +123,7 @@ const Categories = () => {
           errorMessage={fields.category.errorMessage}
           onChangeValue={(newValue) => fieldsValidation("category", newValue)}
         />
-        {modalTitle === `EDITAR ${selectedButton?.toUpperCase()}` && (
+        {isEditModal && (
           <div className="mt-4" style={{ cursor: "context-menu" }}>
             <span className="fw-bold">JOGOS DA CATEGORIA:</span>
             {categoryImages.map((img, key) => (
@@ -166,14 +171,15 @@ const Categories = () => {
   const handleClickSaveButton = () => {
     if (fields.category.onError === false) {
       const obj = {
-        id: modalTitle === "ADICIONAR CATEGORIA" ? null : fields.category.id,
+        id: isAddModal ? null : fields.category.id,
         name: fields.category.value?.toUpperCase(),
       };
 
-      if (modalTitle === "ADICIONAR CATEGORIA") {
+      if (isAddModal) {
         addCategory(obj);
         setSelectedButton(obj.name);
-      } else if (modalTitle === `EDITAR ${selectedButton?.toUpperCase()}`) {
+        setCategoryImages([]);
+      } else if (isEditModal) {
         editCategory(obj);
         categoryImages.forEach((img) => editImage(img, false));
         setSelectedButton(obj.name);
@@ -206,9 +212,9 @@ const Categories = () => {
         showModal={showModal}
         onHide={() => setShowModal(false)}
         body={
-          modalTitle === "ADICIONAR CATEGORIA"
+          isAddModal
             ? addOrEditCategoryElement()
-            : modalTitle === `EDITAR ${selectedButton?.toUpperCase()}`
+            : isEditModal
             ? addOrEditCategoryElement()
             : removeCategoryElement()
         }

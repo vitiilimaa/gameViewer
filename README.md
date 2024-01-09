@@ -1,6 +1,8 @@
-Desafio CNP-003
+# Gameviewer apresenta para o usuário os melhores jogos de cada categoria de acordo com a opinião dos administradores do site. 
 
-Para iniciar a aplicação, abra 2 terminais:
+**Objetivo:** praticar a lógica que envolve ações de usuário público/admin (apesar de simular um banco de dados com json-server)
+
+## Para iniciar a aplicação, abra 2 terminais:
 
 No primeiro, utilize o o comando: 
 npx json-server --watch ./mock/db.json

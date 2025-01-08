@@ -3,30 +3,6 @@
     {
       "id": 0,
       "name": "Vitor Batista",
-      "email": "contato@vitorbatistadev",
-      "password": "123"
-    },
-    {
-      "id": 1,
-      "name": "Vitor Batista",
-      "email": "contato@vitorbatista.",
-      "password": "123"
-    },
-    {
-      "id": 2,
-      "name": "Vitor Batista",
-      "email": "contato@vitorbatistadev",
-      "password": "123"
-    },
-    {
-      "id": 3,
-      "name": "Vitor Batista",
-      "email": "contato@vitorbatista.ev",
-      "password": "123"
-    },
-    {
-      "id": 4,
-      "name": "Vitor Batista",
       "email": "contato@vitorbatista.dev",
       "password": "123"
     }
@@ -65,7 +41,7 @@
       "description": "Counter-Strike 2 é um jogo tático multijogador de tiro em primeira pessoa de 2023 desenvolvido e publicado pela Valve. É a quinta parcela principal da série Counter-Strike.",
       "src": "https://cdn.akamai.steamstatic.com/apps/csgo/images/csgo_react/social/cs2.jpg",
       "alt": "",
-      "category": "TESTE"
+      "category": "FPS"
     },
     {
       "id": 7,
@@ -74,24 +50,7 @@
       "description": "Call of Duty: Warzone é um jogo eletrônico free-to-play do gênero battle royale desenvolvido pela Infinity Ward e Raven Software e publicado pela Activision. Lançado em 10 de março de 2020 para Microsoft Windows, PlayStation 4 e Xbox One, o jogo faz parte do título Call of Duty: Modern Warfare, mas não requer compra.",
       "src": "https://www.pixel4k.com/wp-content/uploads/2020/08/call-of-duty-warzone_1596993314.jpg",
       "alt": "",
-      "category": "TESTE"
-    },
-    {
-      "id": 8,
-      "title": "RDR 2",
-      "description": "RDR 2 é um jogo eletrônico de ação-aventura desenvolvido e publicado pela Rockstar Games. É o terceiro título da série Red Dead e uma prequela de Red Dead Redemption, tendo sido lançado em outubro de 2018 para PlayStation 4 e Xbox One e em novembro de 2019 para Microsoft Windows e Google Stadia.",
-      "src": "https://i.pinimg.com/originals/3d/c7/92/3dc792956e547ff736cd9dea580295af.jpg",
-      "category": "TERROR",
-      "alt": "RDR 2"
-    },
-    {
-      "id": 12,
-      "title": "asdasda",
-      "description": "asdas",
-      "src": "asd",
-      "category": "MOBA",
-      "alt": "asdasda",
-      "order": 3
+      "category": "FPS"
     },
     {
       "id": 15,
@@ -110,60 +69,12 @@
       "alt": "asdsad"
     },
     {
-      "id": 17,
-      "title": "asdsa",
-      "description": "dsda",
-      "src": "dhttps://assets.nuuvem.com/image/upload/t_screenshot_full/v1/products/628a60ee48479300174bcd23/screenshots/nczuxfypyc13m3xy2ha9.jpg",
-      "category": "ASDSAS",
-      "alt": "asdsa"
-    },
-    {
-      "id": 18,
-      "title": "asdas",
-      "description": "asdd",
-      "src": "https://assets.nuuvem.com/image/upload/t_screenshot_full/v1/products/628a60ee48479300174bcd23/screenshots/nczuxfypyc13m3xy2ha9.jpg",
-      "category": "ASDAD",
-      "alt": "asdas"
-    },
-    {
-      "id": 19,
-      "title": "asds",
-      "description": "asd",
-      "src": "https://assets.nuuvem.com/image/upload/t_screenshot_full/v1/products/628a60ee48479300174bcd23/screenshots/nczuxfypyc13m3xy2ha9.jpg",
-      "category": "ASDASDS",
-      "alt": "asds"
-    },
-    {
-      "id": 20,
-      "title": "asd",
-      "description": "asdasd",
-      "src": "https://assets.nuuvem.com/image/upload/t_screenshot_full/v1/products/628a60ee48479300174bcd23/screenshots/nczuxfypyc13m3xy2ha9.jpg",
-      "category": "ASDSA",
-      "alt": "asd"
-    },
-    {
-      "id": 21,
-      "title": "asd",
-      "description": "asd",
-      "src": "https://assets.nuuvem.com/image/upload/t_screenshot_full/v1/products/628a60ee48479300174bcd23/screenshots/nczuxfypyc13m3xy2ha9.jpg",
-      "category": "ASDASDA",
-      "alt": "asd"
-    },
-    {
       "id": 23,
       "title": "Resident Evil 2 Remake",
       "description": "Resident Evil 2. Chamado no Japão de Biohazard RE:2, é um jogo eletrônico de survival horror desenvolvido e publicado pela Capcom, sendo um remake do jogo original de 1998.",
       "src": "https://sm.ign.com/ign_br/screenshot/default/resident-evil-2-remake-xbox-one-file-sizejpgoptimal_gkz5.jpg",
       "category": "SURVIVAL HORROR",
       "alt": "Resident Evil 2 Remake"
-    },
-    {
-      "id": 24,
-      "title": "asdas",
-      "description": "asdas",
-      "src": "https://sm.ign.com/ign_br/screenshot/default/resident-evil-2-remake-xbox-one-file-sizejpgoptimal_gkz5.jpg",
-      "category": "ASDDAS",
-      "alt": "asdas"
     }
   ],
   "categories": [
@@ -177,11 +88,7 @@
     },
     {
       "id": 2,
-      "name": "TESTE"
-    },
-    {
-      "id": 3,
-      "name": "SOBREVIVÊNCIA"
+      "name": "FPS"
     }
   ]
 }
